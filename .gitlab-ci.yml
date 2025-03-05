@@ -4,6 +4,7 @@ stages:
 sync_to_github:
   stage: sync_to_github
   script:
+    - git checkout main # Ensure the main branch is checked out
     - git remote add github https://$CI_GITHUB_TOKEN@github.com/samcolumbusbridge/bridge-mgmt-system.git
     - git push github main
   only:
